@@ -1,6 +1,6 @@
 {
   "name": "svelte-showdown",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "type": "module",
   "description": "Wrapper for Showdown that parses Markdown in your Svelte components",
@@ -8,12 +8,12 @@
   "main": "./src/index.js",
   "svelte": "./src/index.js",
   "types": "./types/index.d.ts",
-	"exports": {
-		".": {
-			"types": "./types/index.d.ts",
-			"svelte": "./src/index.js"
-		}
-	},
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "svelte": "./src/index.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dragomano/svelte-showdown"
+    "url": "git+https://github.com/dragomano/svelte-showdown.git"
   },
   "homepage": "https://github.com/dragomano/svelte-showdown",
   "bugs": "https://github.com/dragomano/svelte-showdown/issues",
