@@ -8,7 +8,7 @@ export default defineConfig({
       entry: "src/SvelteShowdown.svelte",
       name: "SvelteShowdown",
       fileName: (format) => `svelte-showdown.${format}.js`,
-      formats: ["es", "umd"],
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
       external: ["svelte"],
