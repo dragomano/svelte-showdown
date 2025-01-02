@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@types/showdown':
+        specifier: ^2.0.6
+        version: 2.0.6
+      showdown:
+        specifier: ^2.1.0
+        version: 2.1.0
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.3
@@ -17,9 +24,6 @@ importers:
       prettier-plugin-svelte:
         specifier: ^3.3.2
         version: 3.3.2(prettier@3.4.2)(svelte@5.16.0)
-      showdown:
-        specifier: ^2.1.0
-        version: 2.1.0
       svelte:
         specifier: ^5.16.0
         version: 5.16.0
@@ -316,6 +320,9 @@ packages:
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
+
+  '@types/showdown@2.0.6':
+    resolution: {integrity: sha512-pTvD/0CIeqe4x23+YJWlX2gArHa8G0J0Oh6GKaVXV7TAeickpkkZiNOgFcFcmLQ5lB/K0qBJL1FtRYltBfbGCQ==}
 
   acorn-typescript@1.4.13:
     resolution: {integrity: sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==}
@@ -695,6 +702,8 @@ snapshots:
       - supports-color
 
   '@types/estree@1.0.6': {}
+
+  '@types/showdown@2.0.6': {}
 
   acorn-typescript@1.4.13(acorn@8.14.0):
     dependencies:
