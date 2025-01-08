@@ -10,13 +10,13 @@ npm i svelte-showdown -D
 
 ```svelte
 <script>
-  import { SvelteShowdown } from 'svelte-showdown';
+	import { SvelteShowdown } from 'svelte-showdown';
 
-  let content = $state('**This text is bold**, and this one contains emoji: :smile: :alien:');
+	let content = $state('**This text is bold**, and this one contains emoji: :smile: :alien:');
 
-  const options = {
-    emoji: true,
-  };
+	const options = {
+		emoji: true
+	};
 </script>
 
 <SvelteShowdown {content} {options} />

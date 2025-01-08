@@ -1,5 +1,5 @@
 <script lang="ts">
-  import SvelteShowdown from '../types/SvelteShowdown.svelte';
+	import SvelteShowdown from '$lib/SvelteShowdown.svelte';
 </script>
 
 <SvelteShowdown content={'**Some text**'} />
