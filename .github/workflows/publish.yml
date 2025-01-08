@@ -6,28 +6,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          version: 9
-          run_install: false
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-          cache: pnpm
-          registry-url: https://registry.npmjs.org
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Publish 🚀
-        shell: bash
-        run: pnpm publish --access public --no-git-checks
+      - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+        # Currently, only npm supports publishing packages with provenance
+        # https://docs.npmjs.com/generating-provenance-statements
+        run: |
+          npm install --force
+          npm publish --provenance --access public
