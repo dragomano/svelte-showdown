@@ -3,20 +3,20 @@
 Use [showdown](https://github.com/showdownjs/showdown) as a Svelte component.
 
 ```bash
-npm i svelte-showdown -D
+pnpm i svelte-showdown -D
 ```
 
 ## How to use
 
 ```svelte
 <script>
-	import { SvelteShowdown } from 'svelte-showdown';
+  import { SvelteShowdown } from 'svelte-showdown';
 
-	let content = $state('**This text is bold**, and this one contains emoji: :smile: :alien:');
+  let content = $state('**This text is bold**, and this one contains emoji: :smile: :alien:');
 
-	const options = {
-		emoji: true
-	};
+  const options = {
+    emoji: true
+  };
 </script>
 
 <SvelteShowdown {content} {options} />
