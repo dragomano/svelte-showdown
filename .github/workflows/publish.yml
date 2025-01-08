@@ -1,4 +1,5 @@
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v*'
@@ -11,10 +12,12 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: lts/*
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
 
       - name: Publish package
         env:
@@ -22,6 +25,9 @@ jobs:
 
         # Currently, only npm supports publishing packages with provenance
         # https://docs.npmjs.com/generating-provenance-statements
+        # npm install --force
+        # npm publish --provenance --access public
         run: |
-          npm install --force
-          npm publish --provenance --access public
+          pnpm install --frozen-lockfile
+          pnpm build
+          pnpm publish
