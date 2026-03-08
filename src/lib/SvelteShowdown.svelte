@@ -16,10 +16,13 @@
 		options?: ShowdownOptions;
 	} = $props();
 
+	// svelte-ignore state_referenced_locally
 	const converter = new showdown.Converter({ extensions });
 
+	// svelte-ignore state_referenced_locally
 	converter.setFlavor(flavor);
 
+	// svelte-ignore state_referenced_locally
 	Object.entries(options).forEach(([key, value]: [string, Primitive]) =>
 		converter.setOption(key, value)
 	);
