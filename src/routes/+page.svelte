@@ -2,4 +2,4 @@
 	import SvelteShowdown from '$lib/SvelteShowdown.svelte';
 </script>
 
-<SvelteShowdown content={'**Some text**'} />
+<SvelteShowdown content="**Some text**" />
